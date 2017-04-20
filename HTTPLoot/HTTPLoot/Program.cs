@@ -37,7 +37,7 @@ namespace HTTPLoot
             };
 
             listener = new HttpListener();
-            URL_Map.Keys.DoAction(u => listener.Prefixes.Add(BaseURL + u));
+            listener.Prefixes.Add(BaseURL + "/");
             listener.Start();
             listener.BeginGetContext(new AsyncCallback(ContextReceivedCallback), null);
             Console.WriteLine("Server started successfully");
